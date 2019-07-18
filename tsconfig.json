@@ -1,9 +1,13 @@
-{ 
+{   
+  "include": [
+        "src/scripts/*"
+    ],
   "compilerOptions": {
+    "outDir": "build/scripts",
     "target": "ES2017",
     "module": "esnext",
     "moduleResolution": "node",
-    "lib": ["es2017", "dom"],
+    "lib": ["es2017", "dom", "webworker.importscripts"],
     "experimentalDecorators": true
   }
 }

@@ -5,9 +5,11 @@ Hacker News PWA
 * copy or clone this repository
 * change the names in package.json
 
+
 ## Install
 
 ```
+npm install --global gulp-cli
 npm install
 ```
 

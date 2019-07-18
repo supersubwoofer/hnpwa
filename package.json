@@ -2,12 +2,14 @@
   "name": "hnpwa",
   "version": "1.0.0",
   "description": "",
-  "main": "src/index.ts",
+  "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "parcel src/index.html",
-    "clean": "rm -rf dist",
-    "build": "parcel build src/index.html",
+    "clean:dev": "rm -rf dist",
+    "clean:build": "rm -rf build",
+    "clean:all": "npm run clean:dev && npm run clean:build",
+    "build": "gulp",
+    "dev": "npm run build && parcel build/index.html",
     "lint": "tslint -c tslint.json --project tsconfig.json src/**/*.ts"
   },
   "keywords": [],
@@ -18,18 +20,13 @@
     "lit-element": "^2.2.0"
   },
   "devDependencies": {
-    "parcel-bundler": "^1.12.3",
-    "parcel-plugin-sw-cache": "^0.3.1",
+    "del": "^5.0.0",
+    "gulp": "^4.0.2",
+    "gulp-typescript": "^5.0.1",
     "tslint": "^5.18.0",
     "tslint-config-airbnb": "^5.11.1",
     "typescript": "^3.5.2",
     "workbox-build": "^4.3.1"
-  },
-  "cache": {
-    "disablePlugin": false,
-    "inDev": true,
-    "strategy": "default",
-    "clearDist": true
   },
   "browserslist": [
     "> 5%"

@@ -1,8 +1,11 @@
+// import { TEST } from './idbHelpers';
+
 // step 1 - register service worker
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('sw.ts')
+    navigator.serviceWorker.register('./swInjectManifest.js')
       .then((registration) => {
+        // TEST();
         console.log(`Service Worker registered! Scope: ${registration.scope}`);
       })
       .catch((err) => {
