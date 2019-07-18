@@ -7,9 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean:dev": "rm -rf dist",
     "clean:build": "rm -rf build",
-    "clean:all": "npm run clean:dev && npm run clean:build",
+    "clean:all": "npm run clean:dev & npm run clean:build",
     "build": "gulp",
-    "dev": "npm run build && parcel build/index.html",
+    "dev": "gulp && concurrently --kill-others \"gulp watch\" \"npx serve build\"",
     "lint": "tslint -c tslint.json --project tsconfig.json src/**/*.ts"
   },
   "keywords": [],
@@ -20,6 +20,7 @@
     "lit-element": "^2.2.0"
   },
   "devDependencies": {
+    "concurrently": "^4.1.1",
     "del": "^5.0.0",
     "gulp": "^4.0.2",
     "gulp-typescript": "^5.0.1",

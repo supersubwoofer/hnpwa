@@ -9,18 +9,22 @@ Hacker News PWA
 ## Install
 
 ```
-npm install --global gulp-cli
-npm install
+* npm install --global gulp-cli
+* npm install -g parcel-bundler
+* npm install
 ```
 
 ## Build
 
 ```
 npm run build
+[ ] - !! bundle for browser
 ```
 
 ## Dev
 
 ```
-npm run dev
+* npm run dev
+
+[ ] - improvement! watch src change then reload browser
 ```
