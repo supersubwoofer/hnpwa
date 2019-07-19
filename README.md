@@ -9,8 +9,6 @@ Hacker News PWA
 ## Install
 
 ```
-* npm install --global gulp-cli
-* npm install -g parcel-bundler
 * npm install
 ```
 
@@ -18,13 +16,10 @@ Hacker News PWA
 
 ```
 npm run build
-[ ] - !! bundle for browser
 ```
 
 ## Dev
 
 ```
 * npm run dev
-
-[ ] - improvement! watch src change then reload browser
 ```

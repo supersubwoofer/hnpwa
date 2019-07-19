@@ -8,8 +8,8 @@
     "clean:dev": "rm -rf dist",
     "clean:build": "rm -rf build",
     "clean:all": "npm run clean:dev & npm run clean:build",
-    "build": "gulp",
-    "dev": "gulp && concurrently --kill-others \"gulp watch\" \"npx serve build\"",
+    "build": "webpack -p",
+    "start": "webpack-dev-server -d --content-base ./build",
     "lint": "tslint -c tslint.json --project tsconfig.json src/**/*.ts"
   },
   "keywords": [],
@@ -20,14 +20,17 @@
     "lit-element": "^2.2.0"
   },
   "devDependencies": {
-    "concurrently": "^4.1.1",
-    "del": "^5.0.0",
-    "gulp": "^4.0.2",
-    "gulp-typescript": "^5.0.1",
+    "clean-webpack-plugin": "^3.0.0",
+    "file-loader": "^4.1.0",
+    "html-webpack-plugin": "^3.2.0",
+    "ts-loader": "^6.0.4",
     "tslint": "^5.18.0",
     "tslint-config-airbnb": "^5.11.1",
     "typescript": "^3.5.2",
-    "workbox-build": "^4.3.1"
+    "webpack": "^4.36.1",
+    "webpack-cli": "^3.3.6",
+    "webpack-dev-server": "^3.7.2",
+    "workbox-webpack-plugin": "^4.3.1"
   },
   "browserslist": [
     "> 5%"

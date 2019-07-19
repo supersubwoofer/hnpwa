@@ -8,8 +8,8 @@ interface MyDB extends DBSchema {
       timestamp: number,
     },
     key: string,
-    indexes: { 'by-timestamp': number }
-  }
+    indexes: { 'by-timestamp': number },
+  };
 }
 
 async function demo() {
@@ -17,10 +17,10 @@ async function demo() {
     upgrade(db) {
       const storyStore = db.createObjectStore('workbox-cache-stories', { keyPath: 'url' });
       storyStore.createIndex('by-timestamp', 'timestamp');
-    }
+    },
   });
 }
-export const TEST = () => {demo()}
+export const TEST = () => { demo(); };
 // *** - create indexedDB database
 
 // *** - save data into IndexedDB

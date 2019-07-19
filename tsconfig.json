@@ -1,13 +1,24 @@
 {   
   "include": [
-        "src/scripts/*"
-    ],
+    "src/scripts/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.spec.ts"
+  ],
   "compilerOptions": {
-    "outDir": "build/scripts",
-    "target": "ES2017",
-    "module": "esnext",
-    "moduleResolution": "node",
-    "lib": ["es2017", "dom", "webworker.importscripts"],
-    "experimentalDecorators": true
+    "sourceMap": true,
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "experimentalDecorators": true,
+    "target": "es5",
+    "jsx": "react",
+    "lib": [
+      "dom",
+      "es6",
+      "webworker.importscripts"
+    ],
+    "outDir": "build/scripts"
   }
 }
