@@ -12,11 +12,11 @@
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "experimentalDecorators": true,
-    "target": "es5",
+    "target": "esnext",
     "jsx": "react",
     "lib": [
       "dom",
-      "es6",
+      "es2015", 
       "webworker.importscripts"
     ],
     "outDir": "build/scripts"
