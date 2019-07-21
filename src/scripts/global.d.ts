@@ -1,5 +1,8 @@
-interface Window { __precacheManifest: any; }
+interface Window {
+  __precacheManifest: any;
+  registration: any;
+  importScripts: any;
+}
 declare var self: Window;
 
-importScripts('https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js');
 declare var workbox: import('workbox-sw');

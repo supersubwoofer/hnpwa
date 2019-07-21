@@ -1,6 +1,6 @@
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const workboxPlugin = require('workbox-webpack-plugin');
+const { InjectManifest } = require('workbox-webpack-plugin');
 const resolve = require('path').resolve;
 
 module.exports = {
@@ -16,9 +16,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/index.html'
     }),  
-    new workboxPlugin.InjectManifest({
+    new InjectManifest({
       swSrc: './src/scripts/worker.ts',
       swDest: 'worker.js',
+      importWorkboxFrom: 'disabled',
     }),
   ],
   resolve: {
