@@ -1,5 +1,8 @@
 Hacker News PWA
 
+* App Shell - Purecss responsive layout
+* 
+
 # Getting started
 
 * copy or clone this repository
