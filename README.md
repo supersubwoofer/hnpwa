@@ -1,7 +1,7 @@
 Hacker News PWA
 
 * App Shell - Purecss responsive layout
-* 
+* Router - vaadin-router
 
 # Getting started
 

@@ -25,6 +25,11 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.js'],
   },
+  node: {
+   fs: "empty",
+   net: "empty",
+   tls: "empty",
+  },
   module: {
     rules: [
       { 
@@ -37,7 +42,7 @@ module.exports = {
           loader: 'file-loader',
           options: {
             name: '[name].[ext]',
-            outputPath: 'images/touch'
+            outputPath: 'images'
           }
         }]
       },

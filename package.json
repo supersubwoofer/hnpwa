@@ -1,7 +1,7 @@
 {
   "name": "hnpwa",
   "version": "1.0.0",
-  "description": "",
+  "description": "Hacker News PWA hacking with workbox and lit-element",
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -16,8 +16,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@vaadin/router": "^1.2.1",
+    "@webcomponents/webcomponentsjs": "^2.2.10",
     "idb": "^4.0.4",
-    "lit-element": "^2.2.0"
+    "lit-element": "^2.2.0",
+    "typed-rest-client": "^1.5.0"
   },
   "devDependencies": {
     "clean-webpack-plugin": "^3.0.0",

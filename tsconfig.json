@@ -1,6 +1,6 @@
 {   
   "include": [
-    "src/scripts/*.ts"
+    "src/scripts/**/*.ts"
   ],
   "exclude": [
     "node_modules",
@@ -16,7 +16,7 @@
     "jsx": "react",
     "lib": [
       "dom",
-      "es2015", 
+      "es2017", 
       "webworker.importscripts"
     ],
     "outDir": "build/scripts"
