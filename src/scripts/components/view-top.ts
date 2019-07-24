@@ -1,18 +1,20 @@
 import { LitElement, html, property, customElement } from 'lit-element';
-import { getTop } from '../network';
 import { FeedItem } from '../types';
+import { getNew } from '../network/api.resource';
+import './hn-feed-item';
 
 @customElement('view-top')
 export class ViewTop extends LitElement {
-  @property() name = 'Top';
-  @property({ type: Array }) model;
+  @property() model:FeedItem[];
+  @property() page:number = 1;
 
   render() {
-    return html`<ul>${this.model.map(i => html`<li>${i.title}</li>`)}</ul>`;
+    return html`<ul>${this.model.map(
+      i => html`<hn-feed-item .model=${i}></hn-feed-item>`)}</ul>`;
   }
 
   onBeforeEnter = (location, commands, router) => {
-    getTop('/news/1.json')
+    getNew(this.page)
       .then((res) => { return res; })
       .then((body) => {
         this.model = body.result;

@@ -22,7 +22,6 @@ if ('serviceWorker' in navigator) {
   });
 }
 
-
 const outlet = document.getElementById('outlet');
 const router = new Router(outlet);
 router.setRoutes([
