@@ -1,8 +1,8 @@
 import { getResource } from './requests';
-import { BASE_URL, VERSION, newUrl } from './api.config';
+import { BASE_URL, VERSION, topUrl } from './api.config';
 import { FeedItem } from '../types';
 
-export const getNew =
+export const getTop =
   (page:number) => {
-    return getResource<FeedItem[]>(BASE_URL, VERSION, newUrl(page));
+    return getResource<FeedItem[]>(BASE_URL, VERSION, topUrl(page));
   };

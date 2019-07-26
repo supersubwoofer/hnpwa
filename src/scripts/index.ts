@@ -26,6 +26,8 @@ const outlet = document.getElementById('outlet');
 const router = new Router(outlet);
 router.setRoutes([
   { path: '/', component: 'view-top' },
+  { path: '/top', component: 'view-top' },
+  { path: '/top/:page', component: 'view-top' },
   { path: '/new', component: 'view-new' },
   { path: '/show', component: 'view-show' },
   { path: '/job', component: 'view-job' },
