@@ -1,4 +1,5 @@
 import { Router } from '@vaadin/router';
+import { HOSTING } from './config/config';
 import './components/view-top.ts';
 import './components/view-new.ts';
 import './components/view-job.ts';
@@ -11,7 +12,7 @@ import './components/view-about.ts';
 // step 1 - register service worker
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/worker.js')
+    navigator.serviceWorker.register(`${HOSTING.SUB_PATH}worker.js`)
       .then((registration) => {
         // TEST();
         console.log('Service Worker registered! Scope: ${registration.scope}');
@@ -23,7 +24,7 @@ if ('serviceWorker' in navigator) {
 }
 
 const outlet = document.getElementById('outlet');
-const router = new Router(outlet);
+const router = new Router(outlet, { baseUrl: HOSTING.SUB_PATH });
 router.setRoutes([
   { path: '/', component: 'view-top' },
   { path: '/top', component: 'view-top' },

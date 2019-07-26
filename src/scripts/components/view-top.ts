@@ -2,6 +2,7 @@ import { LitElement, html, property, customElement } from 'lit-element';
 import { FeedItem } from '../types';
 import { getTop } from '../network/api.resource';
 import './hn-page';
+import './hn-feed-list';
 import './hn-feed-item';
 
 @customElement('view-top')
@@ -15,7 +16,7 @@ export class ViewTop extends LitElement {
     // console.log(`${this.baseUrl}${this.resourcePath}`);
     return html`
     <hn-page url="${this.baseUrl}${this.resourcePath}" .page=${this.page} .max=${12}></hn-page>
-    <ul>${this.model.map(i => html`<hn-feed-item .model=${i}></hn-feed-item>`)}</ul>
+    <hn-feed-list .model=${this.model}></hn-feed-list>
       `;
   }
 
