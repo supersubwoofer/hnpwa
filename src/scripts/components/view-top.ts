@@ -12,7 +12,7 @@ export class ViewTop extends LitElement {
   @property() page:number = 1;
 
   render() {
-    console.log(`${this.baseUrl}${this.resourcePath}`);
+    // console.log(`${this.baseUrl}${this.resourcePath}`);
     return html`
     <hn-page url="${this.baseUrl}${this.resourcePath}" .page=${this.page} .max=${12}></hn-page>
     <ul>${this.model.map(i => html`<hn-feed-item .model=${i}></hn-feed-item>`)}</ul>
@@ -20,11 +20,12 @@ export class ViewTop extends LitElement {
   }
 
   onBeforeEnter = (location, commands, router) => {
+    // console.log(location);
     if (location.params != null && typeof location.params.page === 'string') {
       this.page = Number(location.params.page);
     }
-    if (location.base_url != null) {
-      this.baseUrl = location.base_url;
+    if (location.baseUrl != null && location.baseUrl !== '') {
+      this.baseUrl = location.baseUrl;
     }
 
     getTop(this.page)
