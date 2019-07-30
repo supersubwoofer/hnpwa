@@ -1,11 +1,8 @@
 import { Router } from '@vaadin/router';
 import { HOSTING } from './config/config';
-import './components/view-top.ts';
-import './components/view-new.ts';
-import './components/view-job.ts';
-import './components/view-show.ts';
-import './components/view-ask.ts';
+import './components/view-list.ts';
 import './components/view-about.ts';
+import './components/view-user.ts';
 
 // import { TEST } from './idbHelpers';
 
@@ -26,14 +23,19 @@ if ('serviceWorker' in navigator) {
 const outlet = document.getElementById('outlet');
 const router = new Router(outlet, { baseUrl: HOSTING.SUB_PATH });
 router.setRoutes([
-  { path: '/', component: 'view-top' },
-  { path: '/top', component: 'view-top' },
-  { path: '/top/:page', component: 'view-top' },
+  { path: '/', component: 'view-list' },
+  { path: '/top', component: 'view-list' },
+  { path: '/top/:page', component: 'view-list' },
   { path: '/new', component: 'view-new' },
+  { path: '/new/:page', component: 'view-new' },
   { path: '/show', component: 'view-show' },
+  { path: '/show/:page', component: 'view-show' },
   { path: '/job', component: 'view-job' },
+  { path: '/job/:page', component: 'view-job' },
   { path: '/ask', component: 'view-ask' },
+  { path: '/ask/:page', component: 'view-ask' },
   { path: '/about', component: 'view-about' },
+  { path: '/user/:id', component: 'view-user' },
 ]);
 
 

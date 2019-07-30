@@ -29,3 +29,10 @@ export interface Item {
   comments_count: number;
 }
 
+export interface User {
+  id: string;
+  karma: number;
+  created_time: number;
+  created: string;
+}
+

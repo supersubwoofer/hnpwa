@@ -5,23 +5,27 @@ import './hn-page';
 import './hn-feed-list';
 import './hn-feed-item';
 
-@customElement('view-top')
-export class ViewTop extends LitElement {
+@customElement('view-list')
+export class ViewList extends LitElement {
   @property() baseUrl:string = '/';
   @property() resourcePath:string = 'top/';
-  @property() model:FeedItem[];
   @property() page:number = 1;
+  @property() maxPage:number = 12;
+  @property() model:FeedItem[];
 
   render() {
-    // console.log(`${this.baseUrl}${this.resourcePath}`);
     return html`
-    <hn-page url="${this.baseUrl}${this.resourcePath}" .page=${this.page} .max=${12}></hn-page>
+    <hn-page
+      url="${this.baseUrl}${this.resourcePath}"
+      .page=${this.page}
+      .max=${this.maxPage}>
+    </hn-page>
     <hn-feed-list .model=${this.model}></hn-feed-list>
       `;
   }
 
   onBeforeEnter = (location, commands, router) => {
-    // console.log(location);
+    console.log(location);
     if (location.params != null && typeof location.params.page === 'string') {
       this.page = Number(location.params.page);
     }
