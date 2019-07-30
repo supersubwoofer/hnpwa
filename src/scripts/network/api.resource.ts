@@ -7,6 +7,26 @@ export const getTop =
     return getResource<FeedItem[]>(API.BASE_URL, API.VERSION, API.topUrl(page));
   };
 
+export const getNew =
+  (page:number) => {
+    return getResource<FeedItem[]>(API.BASE_URL, API.VERSION, API.newUrl(page));
+  };
+
+export const getShow =
+  (page:number) => {
+    return getResource<FeedItem[]>(API.BASE_URL, API.VERSION, API.showUrl(page));
+  };
+
+export const getAsk =
+  (page:number) => {
+    return getResource<FeedItem[]>(API.BASE_URL, API.VERSION, API.askUrl(page));
+  };
+
+export const getJob =
+  (page:number) => {
+    return getResource<FeedItem[]>(API.BASE_URL, API.VERSION, API.jobUrl(page));
+  };
+
 export const getUser =
   (uid:string) => {
     console.log('getUser() called');

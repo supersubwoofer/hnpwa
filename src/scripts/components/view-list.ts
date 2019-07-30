@@ -1,6 +1,6 @@
 import { LitElement, html, property, customElement } from 'lit-element';
 import { FeedItem } from '../types';
-import { getTop } from '../network/api.resource';
+import { appState } from '../index';
 import './hn-page';
 import './hn-feed-list';
 import './hn-feed-item';
@@ -11,7 +11,7 @@ export class ViewList extends LitElement {
   @property() resourcePath:string = 'top/';
   @property() page:number = 1;
   @property() maxPage:number = 12;
-  @property() model:FeedItem[];
+  @property() model:FeedItem[] = [];
 
   render() {
     return html`
@@ -25,7 +25,8 @@ export class ViewList extends LitElement {
   }
 
   onBeforeEnter = (location, commands, router) => {
-    console.log(location);
+/*  console.log(appState);
+    console.log(location);*/
     if (location.params != null && typeof location.params.page === 'string') {
       this.page = Number(location.params.page);
     }
@@ -33,10 +34,12 @@ export class ViewList extends LitElement {
       this.baseUrl = location.baseUrl;
     }
 
-    getTop(this.page)
-      .then((res) => { return res; })
-      .then((body) => {
-        this.model = body.result;
-      });
+    this.resourcePath = appState.resourcePath;
+
+    appState.listCallback(this.page)
+    .then((res) => { return res; })
+    .then((body) => {
+      this.model = body.result;
+    });
   }
 }

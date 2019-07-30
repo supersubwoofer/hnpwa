@@ -4,7 +4,7 @@ import './hn-feed-item';
 
 @customElement('hn-feed-list')
 export class ViewHnFeedList extends LitElement {
-  @property() model:FeedItem[];
+  @property() model:FeedItem[] = [];
 
   render() {
     return html`
