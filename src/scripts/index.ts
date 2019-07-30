@@ -1,7 +1,7 @@
-import { Router } from '@vaadin/router';
 import { HOSTING } from './config/config';
 import { getTop, getNew, getShow, getAsk, getJob, getUser } from './network/api.resource';
 import { FeedItem } from './types';
+import { Router } from '@vaadin/router';
 import './components/view-list.ts';
 import './components/view-about.ts';
 import './components/view-user.ts';

@@ -25,11 +25,10 @@ export class ViewList extends LitElement {
   }
 
   onBeforeEnter = (location, commands, router) => {
-/*  console.log(appState);
-    console.log(location);*/
     if (location.params != null && typeof location.params.page === 'string') {
       this.page = Number(location.params.page);
     }
+
     if (location.baseUrl != null && location.baseUrl !== '') {
       this.baseUrl = location.baseUrl;
     }
@@ -42,4 +41,5 @@ export class ViewList extends LitElement {
       this.model = body.result;
     });
   }
+
 }
