@@ -4,11 +4,14 @@ import './hn-feed-item';
 
 @customElement('hn-feed-list')
 export class ViewHnFeedList extends LitElement {
-  @property() model:FeedItem[] = [];
+  @property() model: FeedItem[] = [];
+  @property() baseUrl: string = '/';
 
   render() {
     return html`
-      <ol>${this.model.map(i => html`<hn-feed-item .model=${i}></hn-feed-item>`)}</ol>
+      <ol>${this.model.map(
+        i => html`<hn-feed-item .model=${i} .baseUrl=${this.baseUrl}></hn-feed-item>`)}
+      </ol>
       `;
   }
 }

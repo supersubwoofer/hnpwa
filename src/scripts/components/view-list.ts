@@ -20,7 +20,7 @@ export class ViewList extends LitElement {
       .page=${this.page}
       .max=${this.maxPage}>
     </hn-page>
-    <hn-feed-list .model=${this.model}></hn-feed-list>
+    <hn-feed-list .model=${this.model} .baseUrl=${this.baseUrl}></hn-feed-list>
       `;
   }
 
