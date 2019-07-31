@@ -1,6 +1,6 @@
 import { LitElement, html, property, customElement } from 'lit-element';
 import { FeedItem } from '../types';
-import { appState } from '../index';
+import { appState } from '../stateAction';
 import './hn-page';
 import './hn-feed-list';
 import './hn-feed-item';

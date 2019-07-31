@@ -1,6 +1,6 @@
 import { HOSTING } from './config/config';
-import { getTop, getNew, getShow, getAsk, getJob, getUser } from './network/api.resource';
 import { FeedItem } from './types';
+import { appState, actions } from './stateAction';
 import { Router } from '@vaadin/router';
 import './components/view-list.ts';
 import './components/view-about.ts';
@@ -22,39 +22,6 @@ if ('serviceWorker' in navigator) {
   });
 }
 
-let appState = {
-  resourcePath: 'top/',
-  listCallback: getTop,
-};
-
-const update = (state, action) => {
-  if (action === 'LOAD_TOP') {
-    state.resourcePath = 'top/';
-    state.listCallback = getTop;
-  } else if (action === 'LOAD_NEW') {
-    state.resourcePath = 'new/';
-    state.listCallback = getNew;
-  } else if (action === 'LOAD_SHOW') {
-    state.resourcePath = 'show/';
-    state.listCallback = getShow;
-  } else if (action === 'LOAD_ASK') {
-    state.resourcePath = 'ask/';
-    state.listCallback = getAsk;
-  } else if (action === 'LOAD_JOB') {
-    state.resourcePath = 'job/';
-    state.listCallback = getJob;
-  }
-  return state;
-};
-
-const actions = {
-  loadTop: () => { appState = update(appState, 'LOAD_TOP'); },
-  loadNew: () => { appState = update(appState, 'LOAD_NEW'); },
-  loadShow: () => { appState = update(appState, 'LOAD_SHOW'); },
-  loadAsk: () => { appState = update(appState, 'LOAD_ASK'); },
-  loadJob: () => { appState = update(appState, 'LOAD_JOB'); },
-};
-
 const outlet = document.getElementById('outlet');
 const router = new Router(outlet, { baseUrl: HOSTING.SUB_PATH });
 router.setRoutes([
@@ -73,4 +40,3 @@ router.setRoutes([
   { path: '/user/:id', component: 'view-user' },
 ]);
 
-export { appState };

@@ -203,6 +203,13 @@ body {
 }
 </style>
 
+<style>
+.main {
+    padding: 2em;
+    color: black;
+}
+</style>
+
 <div class="custom-menu-wrapper">
     <div class="pure-menu custom-menu custom-menu-top">
         <a href="#" class="pure-menu-heading custom-menu-brand">
@@ -222,6 +229,11 @@ body {
         </ul>
     </nav>
 </div>
+
+<div id="outlet" class="main">
+  <simple-greeting name="Everyone"></simple-greeting>
+</div>
+
 <script>
 (function (window, document) {
 document.getElementById('toggle').addEventListener('click', function (e) {
@@ -230,16 +242,5 @@ document.getElementById('toggle').addEventListener('click', function (e) {
 });
 })(this, this.document);
 </script>
-<style>
-.main {
-    padding: 2em;
-    color: black;
-}
-</style>
-
-<div id="outlet" class="main">
-  <simple-greeting name="Everyone"></simple-greeting>
-</div>
-
 </body>
 </html>
