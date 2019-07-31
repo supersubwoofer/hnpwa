@@ -1,4 +1,3 @@
-import { HOSTING } from './config/config';
 import { FeedItem } from './types';
 import { appState, actions } from './stateAction';
 import { Router } from '@vaadin/router';
@@ -6,7 +5,6 @@ import './components/view-list.ts';
 import './components/view-about.ts';
 import './components/view-user.ts';
 
-export const defaultBaseUrl = HOSTING.SUB_PATH;
 export const defaultRoutes = [
   { path: '/', action: actions.loadTop, component: 'view-list' },
   { path: '/top', action: actions.loadTop, component: 'view-list' },
@@ -28,6 +26,6 @@ export const startRouter = (outlet:HTMLElement, url:string, routes) => {
   router.setRoutes(routes);
 };
 
-export const startDefaultRouter = (outlet:HTMLElement) => {
+export const startDefaultRouter = (outlet:HTMLElement, defaultBaseUrl:string) => {
   startRouter(outlet, defaultBaseUrl, defaultRoutes);
 };

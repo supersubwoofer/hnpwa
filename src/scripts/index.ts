@@ -1,5 +1,6 @@
-import { HOSTING } from './config/config';
+import { HOSTING, NAV_HREFS } from './config/config';
 import { startDefaultRouter } from './routing';
+import { HnNavLink } from './components/hn-nav-link';
 // import { TEST } from './idbHelpers';
 
 // step 1 - register service worker
@@ -15,5 +16,8 @@ if ('serviceWorker' in navigator) {
   });
 }
 
+const navLink = document.getElementById('navLink');
+const nav = new HnNavLink(navLink, NAV_HREFS, HOSTING.SUB_PATH);
+
 const outlet = document.getElementById('outlet');
-startDefaultRouter(outlet);
+startDefaultRouter(outlet, HOSTING.SUB_PATH);

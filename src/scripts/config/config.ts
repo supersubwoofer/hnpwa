@@ -1,3 +1,5 @@
+import { Href } from './types';
+
 // to do - use different configs for dev and prod; and/or use env variable
 export const HOSTING = {
   SUB_PATH: '/',
@@ -14,3 +16,12 @@ export const API = {
   jobUrl: (page:number) => { return `/jobs/${page}.json`; },
   userUrl: (uid:string) => { return `/user/${uid}.json`; },
 };
+
+export const NAV_HREFS:Href[] = [
+  { href: '', text: 'Top' },
+  { href: 'new', text: 'New' },
+  { href: 'show', text: 'Show' },
+  { href: 'ask', text: 'Ask' },
+  { href: 'job', text: 'Job' },
+  { href: 'about', text: 'About' },
+];

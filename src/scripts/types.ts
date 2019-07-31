@@ -35,4 +35,3 @@ export interface User {
   created_time: number;
   created: string;
 }
-
