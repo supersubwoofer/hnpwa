@@ -4,6 +4,7 @@ import { Router } from '@vaadin/router';
 import './components/view-list.ts';
 import './components/view-about.ts';
 import './components/view-user.ts';
+import './components/view-comments.ts';
 
 export const defaultRoutes = [
   { path: '/', action: actions.loadTop, component: 'view-list' },
@@ -17,6 +18,7 @@ export const defaultRoutes = [
   { path: '/job/:page', action: actions.loadJob, component: 'view-list' },
   { path: '/ask', action: actions.loadAsk, component: 'view-list' },
   { path: '/ask/:page', action: actions.loadAsk, component: 'view-list' },
+  { path: '/item/:id', action: actions.loadItem, component: 'view-comments' },
   { path: '/about', component: 'view-about' },
   { path: '/user/:id', component: 'view-user' },
 ];

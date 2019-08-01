@@ -1,6 +1,6 @@
 import { getResource } from './requests';
 import { API } from '../config/config';
-import { FeedItem, User } from '../types';
+import { FeedItem, User, Item } from '../types';
 
 export const getTop =
   (page:number) => {
@@ -29,6 +29,10 @@ export const getJob =
 
 export const getUser =
   (uid:string) => {
-    console.log('getUser() called');
     return getResource<User>(API.BASE_URL, API.VERSION, API.userUrl(uid));
+  };
+
+export const getItem =
+  (id:string) => {
+    return getResource<Item>(API.BASE_URL, API.VERSION, API.itemUrl(id));
   };

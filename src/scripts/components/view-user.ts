@@ -14,7 +14,6 @@ export class ViewUser extends LitElement {
   }
 
   onBeforeEnter = (location, commands, router) => {
-    console.log(location);
     if (location.params != null && typeof location.params.id === 'string') {
       const uid = location.params.id;
       getUser(uid)

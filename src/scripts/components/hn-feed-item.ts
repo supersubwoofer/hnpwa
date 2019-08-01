@@ -14,20 +14,17 @@ export class HnFeedItem extends LitElement {
     html`` : html` by <a href="${this.baseUrl}user/${this.model.user}">${this.model.user}</a>`;
 
     const comments = (this.model.comments_count === 0) ?
-    html`` : html` | <a href="${this.baseUrl}item/${this.model.comments_count}">
+    html`` : html` | <a href="${this.baseUrl}item/${this.model.id}">
     ${this.model.comments_count} comments</a>`;
 
     return html`
-    <li>
-      <article>
-        <a href=${this.model.url}>${this.model.title}</a>
-        <p>
-          ${points}
-          ${user}
-          posted ${this.model.time_ago}
-          ${comments}
-        </p>
-      </article>
-    </li>`;
+      <a href=${this.model.url}>${this.model.title}</a>
+      <p>
+        ${points}
+        ${user}
+        posted ${this.model.time_ago}
+        ${comments}
+      </p>
+    `;
   }
 }

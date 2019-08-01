@@ -15,6 +15,7 @@ export const API = {
   askUrl: (page:number) => { return `/ask/${page}.json`; },
   jobUrl: (page:number) => { return `/jobs/${page}.json`; },
   userUrl: (uid:string) => { return `/user/${uid}.json`; },
+  itemUrl: (id:string) => { return `/item/${id}.json`; },
 };
 
 export const NAV_HREFS:Href[] = [
