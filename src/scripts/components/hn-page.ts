@@ -7,7 +7,6 @@ export class HnPage extends LitElement {
   @property() max:number = 1;
 
   render() {
-    // console.log(this.url);
     const previous =
       (this.page === 1) ?
       html`` : html`<a href="${this.url}${this.page - 1}">Previous</a>`;
