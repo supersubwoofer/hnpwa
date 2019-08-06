@@ -39,8 +39,7 @@ body {
 }
 
 .custom-menu-wrapper {
-    background-color: #550021;;
-    margin-bottom: 2.5em;
+    background-color: #550021;
     white-space: nowrap;
     position: relative;
 }
@@ -83,8 +82,8 @@ body {
     height: 44px;
     display: block;
     position: absolute;
-    top: 3px;
-    right: 0;
+    top: 0;
+    left: 0;
     display: none;
 }
 
@@ -135,39 +134,28 @@ body {
     }
     .custom-menu-bottom {
         position: absolute;
-        width: 100%;
-        border-top: 1px solid #eee;
-        background-color: #808080\9;
+        background: #fff;
+        width: 50%;
+        height: 100vh;
+        border: 1px solid #eee;
         z-index: 100;
-    }
-    .custom-menu-bottom .pure-menu-link {
-        opacity: 1;
         -webkit-transform: translateX(0);
-        -moz-transform: translateX(0);
-        -ms-transform: translateX(0);
         transform: translateX(0);
-        -webkit-transition: all 0.5s;
-        -moz-transition: all 0.5s;
-        -ms-transition: all 0.5s;
-        transition: all 0.5s;
-    }
-    .custom-menu-bottom.custom-menu-tucked .pure-menu-link {
-        -webkit-transform: translateX(-140px);
-        -moz-transform: translateX(-140px);
-        -ms-transform: translateX(-140px);
-        transform: translateX(-140px);
-        opacity: 0;
-        opacity: 1\9;
+        left: 0;
     }
     .custom-menu.custom-menu-tucked {
-        display: none;
+        position: absolute;
+        left: -50%;
     }
 }
 </style>
 
 <style>
+body {
+    margin: 0;
+}
 .main {
-    padding: 2em;
+    padding: 1em;
     color: black;
 }
 </style>

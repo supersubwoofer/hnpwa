@@ -6,34 +6,30 @@ export class HnNavLink extends LitElement {
   @property() id: string;
   @property() hrefs: Href[];
   @property() baseUrl: string;
+  @property() currentLocation: string;
 
   static get styles() {
     return css`
 
-    .custom-menu-screen {
-      width: 0%;
-    }
     .pure-menu-item {
       display: inline;
       padding: 0.5em;
     }
     a.pure-menu-link {
-      color: white;
+      color: #fff;
       text-decoration: none;
+    }
+    .current-view {
+      text-decoration: underline;
     }
 
     @media (max-width: 62em) {
-      .custom-menu-screen {
-        background-color: rgba(0, 0, 0, 0.5);
-        -webkit-transition: all 0.5s;
-        -moz-transition: all 0.5s;
-        -ms-transition: all 0.5s;
-        transition: all 0.5s;
-        height: 3em;
-        width: 100%;
-        position: absolute;
-        top: 0;
-        z-index: -1;
+      .pure-menu-item {
+        display: block;
+        padding: 0.5em;
+      }
+      a.pure-menu-link {
+        color: #550021;
       }
     }
     `;
@@ -44,22 +40,34 @@ export class HnNavLink extends LitElement {
 
     this.hrefs = hrefs;
     this.baseUrl = baseUrl;
+    if (hrefs.length > 0) {
+      this.currentLocation = `${this.baseUrl}${hrefs[0].href}`;
+    }
+
     outlet.appendChild(this.shadowRoot.host);
   }
 
   render() {
+    const currentLinkClass = (currentLocation:string, baseUrl:string, item:Href) => {
+      return (currentLocation === `${baseUrl}${item.href}`) ? 'current-view' : '';
+    };
+
     return html`
     <nav id=${this.id}>
-        <div class="custom-menu-screen"></div>
         <ul class="pure-menu-list">
         ${this.hrefs.map(h =>
           html`
-          <li class='pure-menu-item'>
-          <a href="${this.baseUrl}${h.href}" class='pure-menu-link'>${h.text}</a>
+          <li class="pure-menu-item ${currentLinkClass(this.currentLocation, this.baseUrl, h)}">
+          <a href="${this.baseUrl}${h.href}" class='pure-menu-link' @click="${this.handleNavigate}">
+          ${h.text}</a>
           </li>
           `)}
         </ul>
     </nav>
     `;
+  }
+
+  handleNavigate(e) {
+    this.currentLocation = e.target.pathname;
   }
 }
