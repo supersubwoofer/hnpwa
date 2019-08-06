@@ -30,7 +30,7 @@ export class HnComment extends LitElement {
       return (isShown) ? html`<span class="to-show-reply">[-]</span>` :
       html`<span class="to-hide-reply">[-]</span>`;
     };
-    const toggle = (this.model.comments_count > 0) ? toggleButton(this.isHideReply) : html``;
+    const toggle = (this.model.comments.length > 0) ? toggleButton(this.isHideReply) : html``;
 
     return html`
       <article>
