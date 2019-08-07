@@ -1,4 +1,4 @@
-import { LitElement, html, property, customElement } from 'lit-element';
+import { LitElement, html, property, customElement, css } from 'lit-element';
 import { FeedItem } from '../types';
 import { appState } from '../stateAction';
 import './hn-page';
@@ -12,6 +12,14 @@ export class ViewList extends LitElement {
   @property() page:number = 1;
   @property() maxPage:number = 12;
   @property() model:FeedItem[] = [];
+
+  static get styles() {
+    return css`
+      :host {
+        display: block;
+      }
+    `;
+  }
 
   render() {
     return html`

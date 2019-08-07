@@ -1,4 +1,4 @@
-import { LitElement, html, property, customElement } from 'lit-element';
+import { LitElement, html, property, customElement, css } from 'lit-element';
 import { FeedItem } from '../types';
 import './hn-feed-item';
 
@@ -6,6 +6,15 @@ import './hn-feed-item';
 export class ViewHnFeedList extends LitElement {
   @property() model: FeedItem[] = [];
   @property() baseUrl: string = '/';
+
+  static get styles() {
+    return css`
+      :host {
+        display: block;
+        padding: 1em;
+      }
+    `;
+  }
 
   render() {
     return html`
