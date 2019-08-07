@@ -1,4 +1,4 @@
-import { LitElement, html, property, customElement, TemplateResult } from 'lit-element';
+import { LitElement, html, property, customElement, TemplateResult, css } from 'lit-element';
 import { Item } from '../types';
 import './hn-comment';
 
@@ -7,12 +7,29 @@ export class HnNestedComments extends LitElement {
   @property() baseUrl: string = '/';
   @property() model: Item;
 
+  static get styles() {
+    return css`
+      :host {
+        display: block;
+        padding: 1em 2em;
+        color: #550021;
+      }
+      a {
+        color: #550021;
+      }
+      a.feed-title {
+        font-weight: bold;
+        text-decoration: none;
+      }
+    `;
+  }
+
   render() {
 
     const commentHead =
       html`
       <header>
-      <h1><a href=${this.model.url}>${this.model.title}</a></h1>
+      <h1><a class="feed-title" href=${this.model.url}>${this.model.title}</a></h1>
       <p>
         ${this.model.points} points
         by <a href="${this.baseUrl}user/${this.model.user}">${this.model.user}</a>

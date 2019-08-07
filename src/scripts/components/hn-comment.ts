@@ -14,6 +14,9 @@ export class HnComment extends LitElement {
       :host {
         display: block;
       }
+      a {
+        color: #550021;
+      }
       :host(.root-comment) {
         border-top: solid thin #ddd;
         padding: 1em 0em 0em 0em;
@@ -22,7 +25,8 @@ export class HnComment extends LitElement {
         padding: 1em 1em 0em 1em;
       }
       .section-reply.hiden {
-        padding: 0 0 1em 0;
+        padding: .5em .25em;
+        background: #eee;
       }
       .section-reply.shown slot{
         display: block;
