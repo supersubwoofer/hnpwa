@@ -4,6 +4,7 @@ let appState = {
   resourcePath: 'top/',
   listCallback: getTop,
   itemCallback: getItem,
+  maxPage: 12,
 };
 
 const actions = {
@@ -12,6 +13,7 @@ const actions = {
       resourcePath: 'top/',
       listCallback: getTop,
       itemCallback: getItem,
+      maxPage: 12,
     };
   },
   loadNew: () => {
@@ -19,6 +21,7 @@ const actions = {
       resourcePath: 'new/',
       listCallback: getNew,
       itemCallback: getItem,
+      maxPage: 12,
     };
   },
   loadShow: () => {
@@ -26,6 +29,7 @@ const actions = {
       resourcePath: 'show/',
       listCallback: getShow,
       itemCallback: getItem,
+      maxPage: 2,
     };
   },
   loadAsk: () => {
@@ -33,6 +37,7 @@ const actions = {
       resourcePath: 'ask/',
       listCallback: getAsk,
       itemCallback: getItem,
+      maxPage: 2,
     };
   },
   loadJob: () => {
@@ -40,6 +45,7 @@ const actions = {
       resourcePath: 'job/',
       listCallback: getJob,
       itemCallback: getItem,
+      maxPage: 1,
     };
   },
   loadItem: () => {
@@ -47,6 +53,7 @@ const actions = {
       resourcePath: 'item/',
       listCallback: getTop,
       itemCallback: getItem,
+      maxPage: 1,
     };
   },
 };

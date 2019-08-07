@@ -42,6 +42,7 @@ export class ViewList extends LitElement {
     }
 
     this.resourcePath = appState.resourcePath;
+    this.maxPage = appState.maxPage;
 
     appState.listCallback(this.page)
     .then((res) => { return res; })

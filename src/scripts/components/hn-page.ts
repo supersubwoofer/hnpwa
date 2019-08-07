@@ -36,7 +36,8 @@ export class HnPage extends LitElement {
 
     const next =
       (this.page === this.max) ?
-      html`` : html`<a class="page-link" href="${this.url}${this.page + 1}">next ></a>`;
+      html`<a class="page-link disabled">next ></a>` :
+      html`<a class="page-link" href="${this.url}${this.page + 1}">next ></a>`;
 
     return html`
     ${previous}
