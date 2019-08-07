@@ -1,10 +1,26 @@
-import { LitElement, html, property, customElement } from 'lit-element';
+import { LitElement, html, property, customElement, css } from 'lit-element';
 import { FeedItem } from '../types';
 
 @customElement('hn-feed-item')
 export class HnFeedItem extends LitElement {
   @property() model: FeedItem;
   @property() baseUrl: string = '/';
+
+  static get styles() {
+    return css`
+      :host {
+        display: block;
+        color: #444;
+      }
+      a {
+        color: #550021;
+      }
+      a.feed-title {
+        font-weight: bold;
+        text-decoration: none;
+      }
+    `;
+  }
 
   render() {
     const points = (this.model.points === null) ?
@@ -18,7 +34,7 @@ export class HnFeedItem extends LitElement {
     ${this.model.comments_count} comments</a>`;
 
     return html`
-      <a href=${this.model.url}>${this.model.title}</a>
+      <a class="feed-title" href=${this.model.url}>${this.model.title}</a>
       <p>
         ${points}
         ${user}

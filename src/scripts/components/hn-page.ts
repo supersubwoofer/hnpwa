@@ -14,10 +14,12 @@ export class HnPage extends LitElement {
         padding: 1em;
         border: 1px solid #fff;
         box-shadow: 1px 2px #eee;
+        color: #550021;
       }
       .page-link {
         padding: 1em;
         text-decoration: none;
+        color: #550021;
       }
       a.disabled {
         opacity: .3;

@@ -12,6 +12,11 @@ export class ViewHnFeedList extends LitElement {
       :host {
         display: block;
         padding: 1em;
+        color: #550021;
+      }
+      li {
+        padding: .5em;
+        border-bottom: solid thin #eee;
       }
     `;
   }
