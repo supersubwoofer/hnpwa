@@ -12,6 +12,10 @@ export class HnFeedItem extends LitElement {
         display: block;
         color: #444;
       }
+      h2 {
+        margin-top: 0;
+        font-size: 1em;
+      }
       a {
         color: #550021;
       }
@@ -34,7 +38,7 @@ export class HnFeedItem extends LitElement {
     ${this.model.comments_count} comments</a>`;
 
     return html`
-      <a class="feed-title" href=${this.model.url}>${this.model.title}</a>
+      <a class="feed-title" href=${this.model.url}><h2>${this.model.title}</h2></a>
       <p>
         ${points}
         ${user}

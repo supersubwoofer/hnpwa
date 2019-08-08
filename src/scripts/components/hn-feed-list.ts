@@ -23,8 +23,8 @@ export class ViewHnFeedList extends LitElement {
 
   render() {
     return html`
-      <ol>${this.model.map(
-        i => html`<li><hn-feed-item .model=${i} .baseUrl=${this.baseUrl}></hn-feed-item></li>`)}
+      <ol>${this.model.map(i =>
+        html`<li><hn-feed-item .model=${i} .baseUrl=${this.baseUrl}></hn-feed-item></li>`)}
       </ol>
       `;
   }

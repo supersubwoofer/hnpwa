@@ -1,6 +1,7 @@
 import { getTop, getNew, getShow, getAsk, getJob, getUser, getItem } from './network/api.resource';
 
 let appState = {
+  pageTitle: 'Top news',
   resourcePath: 'top/',
   listCallback: getTop,
   itemCallback: getItem,
@@ -10,6 +11,7 @@ let appState = {
 const actions = {
   loadTop: () => {
     appState = {
+      pageTitle: 'Top news',
       resourcePath: 'top/',
       listCallback: getTop,
       itemCallback: getItem,
@@ -18,6 +20,7 @@ const actions = {
   },
   loadNew: () => {
     appState = {
+      pageTitle: 'Latest news',
       resourcePath: 'new/',
       listCallback: getNew,
       itemCallback: getItem,
@@ -26,6 +29,7 @@ const actions = {
   },
   loadShow: () => {
     appState = {
+      pageTitle: 'Shows',
       resourcePath: 'show/',
       listCallback: getShow,
       itemCallback: getItem,
@@ -34,6 +38,7 @@ const actions = {
   },
   loadAsk: () => {
     appState = {
+      pageTitle: 'Questions',
       resourcePath: 'ask/',
       listCallback: getAsk,
       itemCallback: getItem,
@@ -42,6 +47,7 @@ const actions = {
   },
   loadJob: () => {
     appState = {
+      pageTitle: 'Job Posts',
       resourcePath: 'job/',
       listCallback: getJob,
       itemCallback: getItem,
@@ -50,6 +56,7 @@ const actions = {
   },
   loadItem: () => {
     appState = {
+      pageTitle: 'Comments',
       resourcePath: 'item/',
       listCallback: getTop,
       itemCallback: getItem,

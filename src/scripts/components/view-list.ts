@@ -9,6 +9,7 @@ import './hn-feed-item';
 export class ViewList extends LitElement {
   @property() baseUrl:string = '/';
   @property() resourcePath:string = 'top/';
+  @property() pageTitle:string;
   @property() page:number = 1;
   @property() maxPage:number = 12;
   @property() model:FeedItem[] = [];
@@ -18,11 +19,16 @@ export class ViewList extends LitElement {
       :host {
         display: block;
       }
+      .invisible {
+        position: absolute;
+        left: 50em;
+      }
     `;
   }
 
   render() {
     return html`
+    <h1 class="page-title invisible">${this.pageTitle}</h1>
     <hn-page
       url="${this.baseUrl}${this.resourcePath}"
       .page=${this.page}
@@ -42,6 +48,7 @@ export class ViewList extends LitElement {
     }
 
     this.resourcePath = appState.resourcePath;
+    this.pageTitle = appState.pageTitle;
     this.maxPage = appState.maxPage;
 
     appState.listCallback(this.page)
