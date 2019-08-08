@@ -6,6 +6,7 @@
   "theme_color": "#ffffff",
   "background_color": "#ffffff",
   "display": "standalone",
+  "serviceworker": {"src": "./worker.js" },
   "icons": [
     {
       "src": "images/android-chrome-192x192.png",
