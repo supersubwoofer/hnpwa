@@ -1,7 +1,15 @@
 Hacker News PWA
 
-* App Shell - Purecss responsive layout
-* Router - vaadin-router
+It is a project which I focus on learning PWA caching and navigation preload.
+
+# Technologies
+
+* Framework/UI libraries: Lit-Elememts, Vaadin Router, TypedScript
+* Bundler: Webpack
+* Service worker: Application Shell, Workbox caching
+* Server-side rendering: No
+* API: node-hnapi
+* Hosting: Github Page
 
 # Getting started
 

@@ -2,11 +2,10 @@
   "name": "Hacker News PWA",
   "short_name": "HNPWA",
   "lang": "en-US",
-  "start_url": "https://supersubwoofer.github.io/myblog/hnpwa",
   "theme_color": "#ffffff",
   "background_color": "#ffffff",
   "display": "standalone",
-  "serviceworker": {"src": "./worker.js" },
+  "scope": "/",
   "icons": [
     {
       "src": "images/android-chrome-192x192.png",

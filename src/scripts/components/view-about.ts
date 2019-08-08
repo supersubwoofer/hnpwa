@@ -37,9 +37,9 @@ export class ViewAbout extends LitElement {
     <section>
       <h2>Audits</h2>
       <ul>
-        <li><strong>Lighthouse:</strong> 93/100</li>
-        <li><strong>Interactive (Emerging Markets):</strong> 2.3s</li>
-        <li><strong>Interactive (Faster 3G):</strong> 1.9s</li>
+        <li><strong>Lighthouse:</strong> 92/100</li>
+        <li><strong>Interactive (Emerging Markets):</strong> - </li>
+        <li><strong>Interactive (Faster 3G):</strong> 3.6s</li>
       </ul>
     </section>
     <section>
@@ -56,7 +56,7 @@ export class ViewAbout extends LitElement {
     </section>
     <div class="demo-links">
       <a class="button-link" href="https://supersubwoofer.github.io/myblog/hnpwa/">View App</a>
-      <a class="button-link" href="">Source Code</a>
+      <a class="button-link" href="https://github.com/supersubwoofer/hnpwa">Source Code</a>
     </div>
     `;
   }
