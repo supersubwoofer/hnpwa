@@ -10,3 +10,7 @@ export const getResource = async<T>(baseUrl:string, version:string, resourceUrl:
   const rest: rm.RestClient = new rm.RestClient(userAgent, baseUrl);
   return await rest.get<T>(version + resourceUrl);
 };
+
+export const matchCb = ({ url, event }) => {
+  return (url.pathname === '/news');
+};

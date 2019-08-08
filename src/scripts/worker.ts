@@ -6,6 +6,8 @@ if (workbox) {
   // Precache
   workbox.precaching.precacheAndRoute(self.__precacheManifest || []);
 
+  // workbox.routing.registerRoute(network.matchCb, network.getResource);
+
 } else {
   console.log('Boo! Workbox didn\'t load 😬');
 }
