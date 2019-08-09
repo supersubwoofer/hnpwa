@@ -30,10 +30,10 @@ export const API = {
 };
 
 export const NAV_HREFS:Href[] = [
-  { href: '', text: 'Top' },
-  { href: 'new', text: 'New' },
-  { href: 'show', text: 'Show' },
-  { href: 'ask', text: 'Ask' },
-  { href: 'job', text: 'Job' },
-  { href: 'about', text: 'About' },
+  { href: '', text: 'TOP' },
+  { href: 'new', text: 'NEW' },
+  { href: 'show', text: 'SHOW' },
+  { href: 'ask', text: 'ASK' },
+  { href: 'job', text: 'JOB' },
+  { href: 'about', text: 'ABOUT' },
 ];

@@ -31,13 +31,13 @@ export class HnPage extends LitElement {
   render() {
     const previous =
       (this.page === 1) ?
-      html`<a class="page-link disabled">< prev</a>` :
-      html`<a class="page-link" href="${this.url}${this.page - 1}">< prev</a>`;
+      html`<a class="page-link disabled">PREV</a>` :
+      html`<a class="page-link" href="${this.url}${this.page - 1}">PREV</a>`;
 
     const next =
       (this.page === this.max) ?
-      html`<a class="page-link disabled">next ></a>` :
-      html`<a class="page-link" href="${this.url}${this.page + 1}">next ></a>`;
+      html`<a class="page-link disabled">NEXT</a>` :
+      html`<a class="page-link" href="${this.url}${this.page + 1}">NEXT</a>`;
 
     return html`
     ${previous}
