@@ -22,6 +22,10 @@ export class ViewComments extends LitElement {
       this.commentId = location.params.id;
     }
 
+    if (location.baseUrl != null && location.baseUrl !== '') {
+      this.baseUrl = location.baseUrl;
+    }
+
     appState.itemCallback(this.commentId)
       .then((res) => { return res; })
       .then((body) => {
