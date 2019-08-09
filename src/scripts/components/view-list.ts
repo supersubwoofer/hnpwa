@@ -21,7 +21,7 @@ export class ViewList extends LitElement {
       }
       .invisible {
         position: absolute;
-        left: 50em;
+        left: 5000em;
       }
     `;
   }
