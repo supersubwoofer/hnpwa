@@ -23,6 +23,24 @@ export class ViewList extends LitElement {
         position: absolute;
         left: 5000em;
       }
+
+      .sticky {
+        position: fixed;
+        top: 50px;
+        width: 100%;
+        background: #fff;
+      }
+
+      .sticky + .content {
+        padding-top: 60px;
+      }
+
+      @media (max-width: 62em) {
+
+        .sticky {
+          top: 40px;
+        }
+      }
     `;
   }
 
@@ -30,11 +48,12 @@ export class ViewList extends LitElement {
     return html`
     <h1 class="page-title invisible">${this.pageTitle}</h1>
     <hn-page
+      class="sticky"
       url="${this.baseUrl}${this.resourcePath}"
       .page=${this.page}
       .max=${this.maxPage}>
     </hn-page>
-    <hn-feed-list .model=${this.model} .baseUrl=${this.baseUrl}></hn-feed-list>
+    <hn-feed-list class="content" .model=${this.model} .baseUrl=${this.baseUrl}></hn-feed-list>
       `;
   }
 
