@@ -48,7 +48,7 @@ export class HnNestedComments extends LitElement {
       const commentCss = (isRootComment) ? 'root-comment' : 'reply-comment';
 
       return html`
-        <hn-comment class=${commentCss} .model=${item}>
+        <hn-comment class=${commentCss} .model=${item} .baseUrl=${this.baseUrl}>
         ${item.comments.map(r => recurrsiveComments(false, r, recurrTemplate))}
         </hn-comment>
         `;
