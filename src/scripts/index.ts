@@ -21,3 +21,6 @@ const nav = new HnNavLink(navLink, NAV_HREFS, HOSTING.SUB_PATH);
 
 const outlet = document.getElementById('outlet');
 startDefaultRouter(outlet, HOSTING.SUB_PATH);
+
+const baseTag = document.getElementById('baseUrl');
+baseTag.setAttribute('href', HOSTING.SUB_PATH);
