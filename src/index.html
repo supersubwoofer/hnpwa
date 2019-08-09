@@ -142,17 +142,20 @@ body {
     .custom-menu-bottom {
         position: absolute;
         background: #fff;
-        width: 50%;
+        padding: 0 2em 0 0;
+        min-width: 30%;
         height: 100vh;
         border: 1px solid #eee;
         z-index: 100;
         -webkit-transform: translateX(0);
         transform: translateX(0);
         left: 0;
+        transition: 0.5s;
     }
     .custom-menu.custom-menu-tucked {
         position: absolute;
         left: -50%;
+        transition: 0.5s;
     }
 }
 </style>
@@ -179,10 +182,20 @@ body {
 <div id="outlet" class="main"></div>
 
 <script>
-(function (window, document) {
-document.getElementById('toggle').addEventListener('click', function (e) {
+const toggleStyle = () => {
     document.getElementById('navLink').classList.toggle('custom-menu-tucked');
     document.getElementById('toggle').classList.toggle('x');
+};
+
+(function (window, document) {
+document.getElementById('toggle').addEventListener('click', function (e) {
+    toggleStyle();
+});
+})(this, this.document);
+
+(function (window, document) {
+document.getElementById('navLink').addEventListener('click', function (e) {
+    toggleStyle();
 });
 })(this, this.document);
 </script>
