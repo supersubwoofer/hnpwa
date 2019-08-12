@@ -8,8 +8,8 @@
     "clean:dev": "rm -rf dist",
     "clean:build": "rm -rf build",
     "clean:all": "npm run clean:dev & npm run clean:build",
-    "build": "webpack -p",
-    "start": "webpack-dev-server -d --content-base ./build",
+    "build": "cross-env NODE_ENV=production & webpack -p",
+    "start": "cross-env NODE_ENV=dev & webpack-dev-server -d --content-base ./build",
     "lint": "tslint -c tslint.json --project tsconfig.json src/**/*.ts"
   },
   "keywords": [],
@@ -23,6 +23,7 @@
   },
   "devDependencies": {
     "clean-webpack-plugin": "^3.0.0",
+    "cross-env": "^5.2.0",
     "file-loader": "^4.1.0",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",

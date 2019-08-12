@@ -1,9 +1,7 @@
 import { Href } from './types';
 
-// to do - use different configs for dev and prod; and/or use env variable
 export const HOSTING = {
-  // SUB_PATH: '/',
-  SUB_PATH: '/myblog/hnpwa/',
+  SUB_PATH: (process.env.NODE_ENV === 'production') ? '/myblog/hnpwa/' : '/',
 };
 
 export const API_SPARE = {
