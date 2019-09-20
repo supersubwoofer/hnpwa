@@ -32,5 +32,5 @@ npm run build
 ## Dev
 
 ```
-* npm run dev
+* npm run start
 ```
